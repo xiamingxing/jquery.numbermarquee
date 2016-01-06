@@ -2,7 +2,9 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Numbermarquee demo</title>
+    <script src="../libs/jquery-loader.js"></script>
+    <script src="../src/jquery.numbermarquee.js"></script>
     <style>
         .charClass {
             margin: 10px;
@@ -11,15 +13,16 @@
             background-color: #000;
             box-shadow: 10px 10px 5px #888888;
         }
+        #numlist {
+            font-size: 40px; height: 100px; margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-<div id="numlist" style="font-size: 40px; height: 100px; margin: 0 auto;"></div>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-<script src="jquery.numberMarquee.js"></script>
+<div id="numlist"></div>
 <script>
-    $('#numlist').numberMarquee({
-        size: 20,
+    $('#numlist').numbermarquee({
+        size: 12,
         callBack: function () {
         },
         targetValue: function(series){
@@ -33,24 +36,8 @@
                 seconds = newTime.getSeconds();
             return Number('' + year + month + date + hour + minutes + seconds);
         },
-//        targetValue: 19900725,
-        speed: 100
+        targetValue: 19900725,
+        speed: 1000
     });
-
-    function fixString(str, maxLen, pos, sup) {
-        if (str === undefined) {
-            return str;
-        }
-        str = str.toString();
-        maxLen = maxLen || 0;
-        sup = sup || '';
-        var prefix = pos === 'pre' ? sup : '',
-            suffix = pos === 'suf' ? sup : '';
-
-        for (var l = str.length; l < maxLen; l++) {
-            str = prefix + str + suffix;
-        }
-        return str;
-    }
 </script>
 </body>
