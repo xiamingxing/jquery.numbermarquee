@@ -1,0 +1,26 @@
+{
+  "name": "numbermarquee",
+  "title": "Numbermarquee",
+  "description": "The best jQuery plugin ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/xiamingxing/jquery.numbermarquee",
+  "author": {
+    "name": "xiamingxing",
+    "email": "xia_mingxing@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xiamingxing/jquery.numbermarquee.git"
+  },
+  "bugs": "https://github.com/xiamingxing/jquery.numbermarquee/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/xiamingxing/jquery.numbermarquee/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "1.8"
+  },
+  "keywords": []
+}

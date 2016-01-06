@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .charClass {
+            margin: 10px;
+            border-radius: 2px;
+            padding: 0 5px;
+            background-color: #000;
+            box-shadow: 10px 10px 5px #888888;
+        }
+    </style>
+</head>
+<body>
+<div id="numlist" style="font-size: 40px; height: 100px; margin: 0 auto;"></div>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="jquery.numberMarquee.js"></script>
+<script>
+    $('#numlist').numberMarquee({
+        size: 20,
+        callBack: function () {
+        },
+        targetValue: function(series){
+            var time = new Date().getTime(),
+                newTime = new Date(time),
+                year = newTime.getFullYear(),
+                month = newTime.getMonth() + 1,
+                date = newTime.getDate(),
+                hour = newTime.getHours(),
+                minutes = newTime.getMinutes(),
+                seconds = newTime.getSeconds();
+            return Number('' + year + month + date + hour + minutes + seconds);
+        },
+//        targetValue: 19900725,
+        speed: 100
+    });
+
+    function fixString(str, maxLen, pos, sup) {
+        if (str === undefined) {
+            return str;
+        }
+        str = str.toString();
+        maxLen = maxLen || 0;
+        sup = sup || '';
+        var prefix = pos === 'pre' ? sup : '',
+            suffix = pos === 'suf' ? sup : '';
+
+        for (var l = str.length; l < maxLen; l++) {
+            str = prefix + str + suffix;
+        }
+        return str;
+    }
+</script>
+</body>
